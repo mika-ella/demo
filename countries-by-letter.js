@@ -1,4 +1,4 @@
-let countries = ["USA","Philippines","Japan","Korea", true];
+let countries = ["USA","Philippines","Japan","Korea"];
 
 countries.sort();
 
