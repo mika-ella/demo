@@ -1,9 +1,9 @@
 let country = ["Philippines", "Korea", "Japan", "USA"];
 let language = ["Filipino", "Hangul", "Nihongo", "English"];
-let pairArray = [];
+let pair_Array = [];
 
 for (let i = 0; i < country.length; i++) {
-  pairArray.push([country[i], language[i]]);
+  pair_Array.push([country[i], language[i]]);
 }
 
-console.log(pairArray);
+console.log(pair_Array);
