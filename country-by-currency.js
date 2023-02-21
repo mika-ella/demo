@@ -7,10 +7,4 @@ const countries = [
     { name: "Japan", currency: "Japanese yen", code: "JPY" }
 ];
 
-// countries.forEach(print);
-
-// function print(item) {
-//     console.log(`${item.name} :: ${item.currency} (${item.code}).`);
-// }
-
 countries.forEach((item) => { console.log(`${item.name} :: ${item.currency} (${item.code}).`); });
