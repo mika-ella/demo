@@ -5,9 +5,12 @@ const countries = [
     { name: "Australia", currency: "Australian dollar", code: "AUD" },
     { name: "Germany", currency: "Euro", code: "EUR" },
     { name: "Japan", currency: "Japanese yen", code: "JPY" }
-  ];
-  
-  for (let i = 0; i < countries.length; i++) {
-    console.log(`${countries[i].name} :: ${countries[i].currency} (${countries[i].code}).`);
-  }
-  
+];
+
+// countries.forEach(print);
+
+// function print(item) {
+//     console.log(`${item.name} :: ${item.currency} (${item.code}).`);
+// }
+
+countries.forEach((item) => { console.log(`${item.name} :: ${item.currency} (${item.code}).`); });
