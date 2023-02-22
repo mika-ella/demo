@@ -1,0 +1,6 @@
+const countryListUpperCase = ['PHILIPPINES', 'CHINA', 'AUSTRALIA', 'RUSSIA', 'JAPAN' ];
+countryListUpperCase.forEach(function (element, index, array){
+    array[index] = element.toLowerCase();
+
+});
+console.log(countryListUpperCase);
