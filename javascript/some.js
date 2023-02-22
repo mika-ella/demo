@@ -1,17 +1,7 @@
 
 const countryList = ['philippines', 'china', 'australia', 'russia', 'japan'];
-let foundCountry = false;
+const countryListUpperCase = ['PHILIPPINES', 'CHINA', 'AUSTRALIA', 'RUSSIA', 'JAPAN' ];
 
-for (let i = 0; i < countryList.length; i++) {
-    if (countryList[i].includes('p')) {
-        console.log(`${countryList[i]}`);
-        foundCountry = true;
-        break;
-    }
-}
+const result = countryList.some((country) => country.includes('p'));
 
-if (!foundCountry) {
-    console.log("False");
-}else{
-    console.log("True");
-}
+console.log(result);
