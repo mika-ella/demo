@@ -1,5 +1,9 @@
-const countryList = ['philippines', 'china', 'australia', 'russia', 'japan' ];
 const countryListUpperCase = ['PHILIPPINES', 'CHINA', 'AUSTRALIA', 'RUSSIA', 'JAPAN' ];
+countryListUpperCase.forEach(function (element, index, array){
+    array[index] = element.toLowerCase();
+
+});
+console.log(countryListUpperCase);
 
 //map (pat) - manipulate the items in the countryList so that the items will become uppercase using map method. Result (array).
 
