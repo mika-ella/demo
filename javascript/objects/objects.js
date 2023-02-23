@@ -39,14 +39,33 @@ const employees = [
 //    { name: "Product F", price: 80, category: "Electronics" },
 // ]
 
+console.log(products.map((product) => { 
+  return { name: product.name, price: product.price + 10, category: product.category}; 
+}));
+
 // Expected output - PAT
 // { name: "Edmond", salary: 80000, department: "HR" },
+
+console.log(employees.find(employee => employee.name == 'Edmond' && employee.department == 'HR'));
 
 // Expected array output - JEAN
 // [
 //   { department: "IT", totalSalary: 240000 },
 //   { department: "HR", totalSalary: 215000 },
 // ]
+
+const totalSalaryPerDepartment = employees.reduce((array, employee) => {
+  const index = array.findIndex(dept => dept.department === employee.department);
+  if (index === -1) {
+    array.push({ department: employee.department, totalSalary: employee.salary });
+  }
+  else {
+    array[index].totalSalary += employee.salary;
+  }
+  return array;
+}, []);
+
+console.log(totalSalaryPerDepartment);
 
 // Expected array output - RED
 // [
@@ -59,10 +78,13 @@ const employees = [
 //  { name: "Product G", price: 80, category: "Clothes" },
 //  { name: "Product H", price: 90, category: "Electronics" },
 // ]
+console.log(products.sort((a, b) => a.price - b.price))
 
 // BONUS
 // [
 //   { department: 'HR', average: 71666 }
 // ]
 
-
+const hrEmployee = employees.filter(employee => employee.department == 'HR');
+const avgSalary = Math.floor(hrEmployee.reduce((sum, employee) => sum + employee.salary, 0) / hrEmployee.length);
+console.log([{ department: hrEmployee[0].department, average: avgSalary }]);
