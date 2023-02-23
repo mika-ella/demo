@@ -5,6 +5,7 @@ const countryListUpperCase = ['PHILIPPINES', 'CHINA', 'AUSTRALIA', 'RUSSIA', 'JA
 
 //forEach (jean) - manipulate the items in the countryListUpperCase so that the items will become lowercase using forEach method. Result (display result of every iteration).
 
+
 //filter (red) - filter out country in countryList that includes 'i' and 'a' characters and with more than 5 characters using filter method. Result (array).
 
 //find (marvin) - find country in countryList that has the most number of characters using find method. Result (item/undefined).
