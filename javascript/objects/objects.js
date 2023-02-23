@@ -43,6 +43,9 @@ const employees = [
 // { name: "Edmond", salary: 80000, department: "HR" },
 
 // Expected array output - JEAN
+// ['Nikolai', 'Mika', 'Edmond', 'Carl', 'Edwin']
+
+// BONUS
 // [
 //   { department: "IT", totalSalary: 240000 },
 //   { department: "HR", totalSalary: 215000 },
