@@ -1,7 +1,7 @@
 const countryList = ['philippines', 'china', 'australia', 'russia', 'japan' ];
 
-const longestCountryName = countryList.find((longestCountry) => {
-    return longestCountry.length === Math.max(...countryList.map(country => country.length));
+const longestCountryName = countryList.find((countryName) => {
+    return countryName.length === Math.max(...countryList.map(country => country.length));
 });
 
 if (longestCountryName) {
