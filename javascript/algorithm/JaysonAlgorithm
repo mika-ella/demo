@@ -1,0 +1,7 @@
+// Min, Max, Length and Average of an array of numbers - JAYSON
+
+/*1. Create a variable, access the class name Math using ,min static method. 
+  2. Create a variable, access the class name Math using ,max static method. 
+  3. Create a variable that test the array length. 
+  4. Create a variable test the array using .reduce method and subtract using length.
+  5. Print all the variable using console.*/
