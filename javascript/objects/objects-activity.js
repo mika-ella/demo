@@ -34,14 +34,10 @@ const products = [
 
   const listOfProducts = products.filter( product => product.category === 'Electronics' && product.price <= 70);
 
-  //const list = [];
-  //const departmentName  =  employees.filter(employee => (employee.department === "HR"));
-  //const salaries = departmentName.map(employee => employee.salary);
-  //const average = (math.floor(salaries.reduce((total, current) => total + current, 0 )/departmentName.length)).push(list);
+  const departmentName  =  employees.filter(employee => (employee.department === "HR"));
+  const salaries = departmentName.map(employee => employee.salary);
+  const average = Math.floor(salaries.reduce((total, current) => total + current, 0 )/departmentName.length);
  
+  const expectedResult = [{department : 'HR', average : average}];
 
-  //console.log(listOfProducts);
-  //console.log(list);
-  //console.log(departmentName);
-  //console.log(Math.floor(average));
-  //console.log(departmentName.department, Math.floor(average));
+  console.log(expectedResult);
