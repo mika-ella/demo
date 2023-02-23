@@ -3,6 +3,6 @@
 
 const countryList = ['philippines', 'china', 'australia', 'russia', 'japan' ];
 
-const filteredList = countryList.filter(word => word.includes('i') && word.includes('a') && word.length > 5);
+const filteredList = countryList.filter(country => country.includes('i') && country.includes('a') && country.length > 5);
 
 console.log(filteredList);
