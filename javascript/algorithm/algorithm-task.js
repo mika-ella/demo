@@ -9,6 +9,4 @@
     6. Call the first function.
     7.If the number is prime it will add to the empty array.
     8. Print the result.
-
-    
     */
