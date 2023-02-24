@@ -1,0 +1,14 @@
+// Min, Max, Length and Average of an array of numbers - JAYSON
+/*
+Initialize an array of numbers
+1. Initialize an array of numbers
+2. Set the minimum value to the first element of the array
+3. Set the maximum value to the first element of the array
+4. Set the total value to 0
+5. Iterate over each element of the array
+6. If the current element is less than the minimum value, set the minimum value to the current element
+7. If the current element is greater than the maximum value, set the maximum value to the current element
+8. Add the current element to the total value
+9. After iterating over all elements, divide the total value by the length of the array to get the average value
+10.Output the minimum value, maximum value, array length, and average value of the numbers.
+*/
