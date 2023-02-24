@@ -10,7 +10,7 @@ const animals = ['ant', 'bison', 'camel', 'duck', 'elephant', 12, 15, 99, 87, 1]
 
 const integers =  animals.filter(animal => Number.isInteger(animal));
 
-const listOfElements = animals.map( index => index.toString());
+const listOfElements = animals.map( elementOfAnimals => elementOfAnimals.toString());
 
 const animal =  animals.filter(animalName => animalName.length>=5);
 
