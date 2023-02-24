@@ -21,9 +21,9 @@ const products = [
 //    { name: "Product F", price: 80, category: "Electronics" },
 // ]
 
-const plusten = products.map((product) => {
+const productNewPriceList = products.map((product) => {
     product.price += 10;
     return product;
   });
 
-console.log(plusten);
+console.log(productNewPriceList);
