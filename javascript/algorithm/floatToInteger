@@ -1,0 +1,6 @@
+// Convert all floating numbers to an integer from an Array - MARVIN
+
+//1. Create an array of Floating Points.
+//2. Iterate each item in the array.
+//3. Convert each item in the iteration to integer.
+//4. Create a new variable and store the integers.
