@@ -1,0 +1,12 @@
+
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant', 12, 15, 99, 87, 1];
+
+const outputNum = animals.filter (newanimals => typeof newanimals === 'number');
+    console.log(outputNum);
+
+    console.log(animals);
+
+const choosenAnimals = animals.filter((animalValue) => typeof animalValue === 'string' 
+    &&  String(animalValue).includes('e') 
+    ||  String(animalValue).includes('i'));
+console.log(choosenAnimals); 
