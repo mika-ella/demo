@@ -27,6 +27,8 @@ const employees = [
 //   { name: "Product F", price: 70, category: "Electronics" },   
 // ]
 
+console.log(products.filter(product => product.category === 'Electronics' && product.price <= 70));
+
 // Expected array output - JAYSON
 // [
 //    { name: "Product A", price: 30, category: "Electronics" },
@@ -39,8 +41,8 @@ const employees = [
 //    { name: "Product F", price: 80, category: "Electronics" },
 // ]
 
-console.log(products.map((product) => { 
-  return { name: product.name, price: product.price + 10, category: product.category}; 
+console.log(products.map((product) => {
+  return { name: product.name, price: product.price + 10, category: product.category };
 }));
 
 // Expected output - PAT
@@ -54,15 +56,15 @@ console.log(employees.find(employee => employee.name == 'Edmond' && employee.dep
 //   { department: "HR", totalSalary: 215000 },
 // ]
 
-const totalSalaryPerDepartment = employees.reduce((array, employee) => {
-  const index = array.findIndex(dept => dept.department === employee.department);
+const totalSalaryPerDepartment = employees.reduce((salaryPerDept, employee) => {
+  const index = salaryPerDept.findIndex(dept => dept.department === employee.department);
   if (index === -1) {
-    array.push({ department: employee.department, totalSalary: employee.salary });
+    salaryPerDept.push({ department: employee.department, totalSalary: employee.salary });
   }
   else {
-    array[index].totalSalary += employee.salary;
+    salaryPerDept[index].totalSalary += employee.salary;
   }
-  return array;
+  return salaryPerDept;
 }, []);
 
 console.log(totalSalaryPerDepartment);
@@ -78,7 +80,7 @@ console.log(totalSalaryPerDepartment);
 //  { name: "Product G", price: 80, category: "Clothes" },
 //  { name: "Product H", price: 90, category: "Electronics" },
 // ]
-console.log(products.sort((a, b) => a.price - b.price))
+console.log(products?.sort((itemA, itemB) => itemA.price - itemB.price))
 
 // BONUS
 // [
@@ -86,5 +88,5 @@ console.log(products.sort((a, b) => a.price - b.price))
 // ]
 
 const hrEmployee = employees.filter(employee => employee.department == 'HR');
-const avgSalary = Math.floor(hrEmployee.reduce((sum, employee) => sum + employee.salary, 0) / hrEmployee.length);
-console.log([{ department: hrEmployee[0].department, average: avgSalary }]);
+const avgSalary = hrEmployee.reduce((sum, employee) => sum + employee.salary, 0) / hrEmployee.length;
+console.log([{ department: hrEmployee[0].department, average: parseInt(avgSalary) }]);
