@@ -26,18 +26,31 @@ const products = [
   //   { name: "Product C", price: 40, category: "Electronics" }, 
   //   { name: "Product F", price: 70, category: "Electronics" },   
   // ]
+  const listOfProducts = products.filter( product => product.category === 'Electronics' && product.price <= 70);
+  console.log(listOfProducts);
+  //BONUS
+  //[
+  //  {department: 'IT', totalSalary: 320000}
+  //  {department: 'HR', totalSalary: 215000}
+  //]
+  const departmentName2 = employees.filter(employee => (employee.department === "IT"));
+  const ITsalaries = departmentName2.map(employee => employee.salary);
+  const ITsum = Math.floor(ITsalaries.reduce((total, current) => total + current, 0 ));
 
+  const ITResult = [{department: 'IT', totalSalary: ITsum}];
   // BONUS
   // [
   //   { department: 'HR', average: 71666 }
   // ]
 
-  const listOfProducts = products.filter( product => product.category === 'Electronics' && product.price <= 70);
-
   const departmentName  =  employees.filter(employee => (employee.department === "HR"));
   const salaries = departmentName.map(employee => employee.salary);
   const average = Math.floor(salaries.reduce((total, current) => total + current, 0 )/departmentName.length);
- 
+  const HRsum = Math.floor(salaries.reduce((total, current) => total + current, 0 ));
+
+  const AllResult = [{department: 'IT', totalSalary: ITsum},{department: 'HR', totalSalary: HRsum}];
   const expectedResult = [{department : 'HR', average : average}];
 
+  //console.log(ITResult);
+  console.log(AllResult);
   console.log(expectedResult);
