@@ -18,6 +18,7 @@ const products = [
     { name: "Edwin", salary: 70000, department: "IT" },
     { name: "Carlo", salary: 60000, department: "HR" },
     { name: "Edmond", salary: 80000, department: "HR" },
+    //{ name: "Pres", salary: 10000000, department: "Planning" },
   ];
   
   // Expected array output - MARVIN
@@ -26,8 +27,9 @@ const products = [
   //   { name: "Product C", price: 40, category: "Electronics" }, 
   //   { name: "Product F", price: 70, category: "Electronics" },   
   // ]
-  const listOfProducts = products.filter( product => product.category === 'Electronics' && product.price <= 70);
-  console.log(listOfProducts);
+  //const listOfProducts = products.filter( product => product.category === 'Electronics' && product.price <= 70);
+  //console.log(listOfProducts);
+  /*
   //BONUS
   //[
   //  {department: 'IT', totalSalary: 320000}
@@ -54,3 +56,25 @@ const products = [
   //console.log(ITResult);
   console.log(AllResult);
   console.log(expectedResult);
+  */
+const departments = employees.reduce((dept, employee) => {
+  if(!dept[employee.department]){
+    dept[employee.department] = {name : employee.department, totalSalary : 0};
+  }
+  dept[employee.department].totalSalary += employee.salary;
+
+  return dept;
+
+}, {});
+
+const eachDepartment = Object.entries(departments).map(([key, value]) => ({
+  department : value.name, 
+  totalSalary : value.totalSalary,
+}));
+
+const highestPayingDepartment = eachDepartment.reduce((highest, current) => {
+  return (highest.salary > current.salary) ? highest : current;
+},{});
+//console.log(departments);
+console.log(eachDepartment);
+console.log(highestPayingDepartment);
