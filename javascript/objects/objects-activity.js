@@ -59,22 +59,29 @@ const products = [
   */
 const departments = employees.reduce((dept, employee) => {
   if(!dept[employee.department]){
-    dept[employee.department] = {name : employee.department, totalSalary : 0};
+    dept[employee.department] = {department : employee.department, totalSalary : 0, numOfEmployees : 0, average : 0};
   }
   dept[employee.department].totalSalary += employee.salary;
-
+  dept[employee.department].numOfEmployees += 1;
+  dept[employee.department].average = dept[employee.department].totalSalary / dept[employee.department].numOfEmployees;
   return dept;
 
 }, {});
 
 const eachDepartment = Object.entries(departments).map(([key, value]) => ({
-  department : value.name, 
+  department : value.department, 
   totalSalary : value.totalSalary,
 }));
 
-const highestPayingDepartment = eachDepartment.reduce((highest, current) => {
-  return (highest.salary > current.salary) ? highest : current;
+const departmentAverage = Object.entries(departments).map(([key, value]) => ({
+  department : value.department, 
+  average : Math.floor(value.average),
+}));
+
+const highestPayingDepartment = departmentAverage.reduce((highest, current) => {
+  return (highest.average > current.average) ? highest : current;
 },{});
 //console.log(departments);
+//console.log(departmentAverage);
 console.log(eachDepartment);
 console.log(highestPayingDepartment);
