@@ -20,8 +20,4 @@ const mika: Person = {
     }
 }
 
-const getMika = (person: Person) => {
-    return person;
-}
-
-console.log(getMika(mika));
+console.log(mika);
