@@ -39,16 +39,20 @@ const departments = employees.reduce((accumulator, employee) => {
 const newDepartment = Array.from(departments);
 
 const expectedTotalSalaries = [];
-const expectedAverage = [];
+const averageByDepartment = [];
 newDepartment.forEach(department => {
   const deptEmployees = employees.filter(employee => employee.department === department);
   const totalSalary = deptEmployees.reduce((totalSalaries, employee) => totalSalaries += employee.salary,0);
   expectedTotalSalaries.push({department: department, totalSalary: totalSalary });
+  const averageSalary = Math.floor(totalSalary/deptEmployees.length);
+  averageByDepartment.push({department: department, average: averageSalary});
 });
 
-console.log(expectedTotalSalaries);
+const highAverageByDept = averageByDepartment.filter(department => department.average === Math.max(...averageByDepartment.map(dept => dept.average)));
 
-// BONUS
-// [
+
+console.log(expectedTotalSalaries);
+console.log(averageByDepartment);
+console.log(highAverageByDept);
 //   { department: 'HR', average: 71666 }
 // ]
