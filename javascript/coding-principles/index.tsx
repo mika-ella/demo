@@ -55,8 +55,8 @@ console.log(`The sum of ${a} and ${b} is ${sum1}`);
 
 a = 7;
 b = 3;
-let minus = x - y;
-console.log(`The difference of ${x} and ${y} is ${minus}`);
+let sum = x + y;
+console.log(`The sum of ${x} and ${y} is ${sum}`);
 
 // 5. Pat
 // Without applying DRY
