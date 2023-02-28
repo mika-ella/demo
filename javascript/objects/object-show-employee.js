@@ -31,24 +31,28 @@ console.log(matchFound);
 //   { department: "IT", totalSalary: 320000 },
 //   { department: "HR", totalSalary: 215000 },
 // ]
+const departments = employees.reduce((accumulator, employee) => {
+  accumulator.add(employee.department);
+  return accumulator;
+}, new Set());
 
-let sumOfAllHRSal = 0;
-let sumOfAllITSal = 0;
-const findMatchDeptIT = employees.filter(elements => {return elements.department === "IT"});
-findMatchDeptHR.forEach(elements => {return sumOfAllHRSal += elements.salary});
-findMatchDeptIT.forEach(elements => {return sumOfAllITSal += elements.salary});
+const newDepartment = Array.from(departments);
 
-let lengthHR = findMatchDeptHR.length;
-const average = Math.floor(sumOfAllHRSal/lengthHR);
+const expectedTotalSalaries = [];
+const averageByDepartment = [];
+newDepartment.forEach(department => {
+  const deptEmployees = employees.filter(employee => employee.department === department);
+  const totalSalary = deptEmployees.reduce((totalSalaries, employee) => totalSalaries += employee.salary,0);
+  expectedTotalSalaries.push({department: department, totalSalary: totalSalary });
+  const averageSalary = Math.floor(totalSalary/deptEmployees.length);
+  averageByDepartment.push({department: department, average: averageSalary});
+});
 
-const totalITSalary = [{department: "IT", totalSalary: sumOfAllITSal}];
-const totalHRSalary = [{department: "IT", totalITSalary: sumOfAllHRSal}];
-console.log(totalITSalary);
-console.log(totalHRSalary);
+const highAverageByDept = averageByDepartment.filter(department => department.average === Math.max(...averageByDepartment.map(dept => dept.average)));
 
-// BONUS
-// [
+
+console.log(expectedTotalSalaries);
+console.log(averageByDepartment);
+console.log(highAverageByDept);
 //   { department: 'HR', average: 71666 }
 // ]
-const expectedResult = [{department: "HR", averageSalary: average}];
-console.log(expectedResult);
