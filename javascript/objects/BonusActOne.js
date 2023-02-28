@@ -11,12 +11,12 @@ const employees = [
     { name: "Red", salary: 80000, department: "ACC" },
   ];
 
-const result = employees.reduce((accumulator, currentnum) => {
-    const departmentIndex = accumulator.findIndex(item => item.department === currentnum.department);
+const result = employees.reduce((accumulator, currentValue) => {
+    const departmentIndex = accumulator.findIndex(item => item.department === currentValue.department);
     if (departmentIndex !== -1) {
-        accumulator[departmentIndex].totalSalary += currentnum.salary;
+        accumulator[departmentIndex].totalSalary += currentValue.salary;
     } else {
-        accumulator.push({ department: currentnum.department, totalSalary: currentnum.salary });
+        accumulator.push({ department: currentValue.department, totalSalary: currentValue.salary });
     }
     return accumulator;
   }, []);
