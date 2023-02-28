@@ -15,8 +15,5 @@ let favoriteColors = [{
     favoriteColor: 'blue'
   }];
 
-  const result = favoriteColors.map(objects => 
-    {
-        console.log(`${objects.name} favorite color is ${objects.favoriteColor}.`);
-    }
-    );
+  const result = favoriteColors.map(objects => `${objects.name} favorite color is ${objects.favoriteColor}.`);
+  console.log(result);
