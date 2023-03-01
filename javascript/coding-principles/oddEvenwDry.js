@@ -6,5 +6,5 @@ console.log(numbers[3]);
 console.log(numbers[4]);
 
 function isEvenOrOdd(number){
-    return number % 2 === 0 ? true : false;
-  }
+    return number % 2 === 0;
+}
